@@ -6,14 +6,13 @@
 # @File    : urls.py
 from django.urls import path
 
+from shop.views import GoodsListAPI
+
 
 def temp_func():
     pass
 
-
 urlpatterns = [
-    path("login/", temp_func),
-    path("register/", temp_func),
-    path("info/", temp_func),
-    path("integral/", temp_func),
+    path("goods/list", GoodsListAPI.as_view()),
+    path("goods/detail", GoodsListAPI.as_view()),
 ]

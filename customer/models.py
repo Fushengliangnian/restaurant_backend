@@ -1,9 +1,9 @@
 from django.db import models
 
-# Create your models here.
+from core.model.base import BaseModel
 
 
-class CustomerModel(models.Model):
+class Customer(BaseModel):
     open_id = models.CharField(max_length=255, help_text="微信唯一ID", verbose_name="微信唯一ID")
     nickname = models.CharField(max_length=255, help_text="微信昵称", verbose_name="微信昵称")
     sex = models.IntegerField(choices=((1, "男"), (2, "女"), (0, "未知")), help_text="性别", verbose_name="性别")
@@ -16,8 +16,5 @@ class CustomerModel(models.Model):
     email = models.CharField(max_length=255, help_text="邮箱", verbose_name="邮箱")
 
     class Meta:
-        pass
+        verbose_name = "客户表"
 
-
-class IntegralModel(models.Model):
-    pass

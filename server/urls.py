@@ -18,8 +18,10 @@ from django.urls import path
 from django.urls import include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("customer/", include("customer.urls")),
-    path("pay/", include("pay.urls")),
-    path("goods/", include("goods.urls")),
+    path("api/v1/admin/", admin.site.urls),
+    path("api/v1/customer/", include("customer.urls")),
+    path("api/v1/pay/", include("pay.urls")),
+    path("api/v1/shop/", include("shop.urls")),
+    path("api/v1/integral/", include("integral.urls")),
+    path('api/v1/api-auth/', include('rest_framework.urls')),
 ]
