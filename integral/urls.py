@@ -6,7 +6,8 @@
 # @File    : urls.py
 from django.urls import path
 
-from shop.views import GoodsListAPI
+from integral.views import IntegralListAPI
+from integral.views import IntegralDetailAPI
 
 
 def temp_func():
@@ -14,6 +15,6 @@ def temp_func():
 
 
 urlpatterns = [
-    path("statistics/list", GoodsListAPI.as_view()),
-    path("gather/detail", GoodsListAPI.as_view()),
+    path("statistics/list", IntegralListAPI.as_view()),
+    path("gather/detail", IntegralDetailAPI.as_view()),
 ]

@@ -64,3 +64,15 @@ class BillGatherAPI(BaseGenericAPIView):
             create_time__lte=end_time
         ).aggregate(price_sum=Sum("price"))
         return
+
+
+class BillDetailAPI(BaseGenericAPIView):
+    def post(self, request, *args, **kwargs):
+        start_time = request.data.get("start_time")
+        end_time = request.data.get("end_time")
+        Bill.objects.filter(
+            user=self.request.user,
+            create_time__gte=start_time,
+            create_time__lte=end_time
+        ).aggregate(price_sum=Sum("price"))
+        return

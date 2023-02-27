@@ -6,6 +6,7 @@ from customer.models import Customer
 
 
 class Coupon(BaseModel):
+    coupon_id = models.UUIDField(help_text="优惠券唯一ID")
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
     name = NotNullCharField(help_text="优惠券名称")
     description = models.TextField(help_text="描述")

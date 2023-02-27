@@ -7,6 +7,8 @@
 from django.urls import path
 
 from pay.views import BillListAPI
+from pay.views import BillGatherAPI
+from pay.views import BillDetailAPI
 
 
 def temp_func():
@@ -16,6 +18,7 @@ def temp_func():
 urlpatterns = [
     path("wechat/callback/", temp_func),
     path("bill/list", BillListAPI.as_view()),
-    path("bill/gather", temp_func),
+    path("bill/gather", BillGatherAPI.as_view()),
+    path("bill/detail", BillDetailAPI.as_view()),
     path("integral/", temp_func),
 ]
